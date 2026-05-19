@@ -34,6 +34,7 @@ const themeBtn    = document.getElementById('themeBtn');
 const resultModalEl = document.getElementById('resultModal');
 const resultModal   = new bootstrap.Modal(resultModalEl);
 
+// logic for toggling light/dark themes
 themeBtn.addEventListener('click', () =>
 {
   theme = theme === 'light' ? 'dark' : 'light';
