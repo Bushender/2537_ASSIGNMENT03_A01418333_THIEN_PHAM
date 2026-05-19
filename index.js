@@ -87,9 +87,8 @@ async function fetchRandomPokemon(count)
   {
     const res    = await fetch(p.url);
     const detail = await res.json();
-
-    // Get the official artwork image if it exists
     let img = null;
+    
     if (detail.sprites && detail.sprites.other && detail.sprites.other['official-artwork'])
     {
       img = detail.sprites.other['official-artwork'].front_default;
@@ -100,8 +99,10 @@ async function fetchRandomPokemon(count)
       pokemon.push({ name: detail.name, img: img });
     }
 
-    // Stop once we have enough
-    if (pokemon.length === count) break;
+    if (pokemon.length === count)
+    {
+      break;
+    } 
   }
 
   return pokemon;
